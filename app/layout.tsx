@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
+import { Chatbot } from "@/components/sections/Chatbot";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -49,6 +50,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        <Chatbot />
       </body>
     </html>
   );
