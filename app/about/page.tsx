@@ -124,21 +124,27 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 4. TechWeUse */}
-        <section className="py-20 lg:py-28 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <RevealWrapper variant="fadeUp">
-              <SectionHeader
-                caption="Our Technology"
-                heading="Premium Equipment, Proven Performance"
-                subtext={<>We work with the best solar hardware available in India. <Link href="/all-about-solar" className="text-primary underline underline-offset-2 hover:text-primary-light transition-colors">Learn how it all works</Link> — from panels to inverters to monitoring.</>}
-                className="mb-12"
-              />
-            </RevealWrapper>
-            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { icon: Sun, title: "Monocrystalline Solar Panels", spec: "High efficiency · MNRE certified · 25-year performance warranty", desc: "We use monocrystalline panels with superior light absorption, ideal for Indian rooftops where space efficiency matters." },
-                { icon: Battery, title: "LiFePO4 Lithium Batteries", spec: "2,000+ charge cycles · 5-year lifespan · Maintenance-free", desc: "Lithium iron phosphate batteries provide safe, reliable backup power with longer life than traditional lead-acid batteries." },
+	        {/* 4. TechWeUse */}
+	        <section className="py-20 lg:py-28 bg-white">
+	          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+	            <RevealWrapper variant="fadeUp" className="mb-12">
+	              <SectionHeader
+	                caption="Our Technology"
+	                heading="Premium Equipment, Proven Performance"
+	                subtext="We work with the best solar hardware available in India — from panels to inverters to monitoring."
+	                className="mb-4"
+	              />
+	              <Link
+	                href="/all-about-solar"
+	                className="text-primary underline underline-offset-2 hover:text-primary-light transition-colors font-medium"
+	              >
+	                Learn how it all works
+	              </Link>
+	            </RevealWrapper>
+	            <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+	              {[
+	                { icon: Sun, title: "Monocrystalline Solar Panels", spec: "High efficiency · MNRE certified · 25-year performance warranty", desc: "We use monocrystalline panels with superior light absorption, ideal for Indian rooftops where space efficiency matters." },
+	                { icon: Battery, title: "LiFePO4 Lithium Batteries", spec: "2,000+ charge cycles · 5-year lifespan · Maintenance-free", desc: "Lithium iron phosphate batteries provide safe, reliable backup power with longer life than traditional lead-acid batteries." },
                 { icon: Cpu, title: "MPPT Charge Controllers", spec: "PWM/MPPT · >90% efficiency · Built-in protections", desc: "Advanced charge controllers maximise energy harvest from your panels and protect the battery from overcharge and discharge." },
                 { icon: Activity, title: "Remote Monitoring System", spec: "Real-time alerts · App access · Centralised dashboard", desc: "Monitor your system's health, output, and savings from your phone. Our RMS sends alerts before problems become failures." },
               ].map((item, i) => (

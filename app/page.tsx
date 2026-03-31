@@ -193,17 +193,14 @@ export default function Home() {
                   };
 
                   try {
-                    const res = await fetch('/api/contact', {
+                    await fetch('https://script.google.com/macros/s/AKfycbymfcX-uWhDUanraT6H4x9hySVc22mDcoloVQU2QvR5JgH_duXdQS9UbrY0qkfUsLXA/exec', {
                       method: 'POST',
+                      mode: 'no-cors',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify(data),
                     });
-                    if (res.ok) {
-                      form.reset();
-                      alert("✓ Thank you! We'll contact you shortly to schedule your free site visit.");
-                    } else {
-                      alert("❌ Error submitting form. Please try again or call us.");
-                    }
+                    form.reset();
+                    alert("✓ Thank you! We'll contact you shortly to schedule your free site visit.");
                   } catch (err) {
                     alert("❌ Error submitting form. Please check your connection.");
                   } finally {

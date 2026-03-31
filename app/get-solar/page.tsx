@@ -16,8 +16,26 @@ import { CheckCircle2, MessageCircle, Check } from "lucide-react";
 export default function GetSolarPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const form = e.currentTarget as HTMLFormElement;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
+      phone: (form.elements.namedItem("phone") as HTMLInputElement)?.value || "",
+      message: [
+        (form.elements.namedItem("address") as HTMLTextAreaElement)?.value,
+        (form.elements.namedItem("property") as HTMLSelectElement)?.value,
+        (form.elements.namedItem("bill") as HTMLInputElement)?.value ? `Bill: ₹${(form.elements.namedItem("bill") as HTMLInputElement).value}` : "",
+        (form.elements.namedItem("notes") as HTMLTextAreaElement)?.value,
+      ].filter(Boolean).join(" | "),
+      source: "get_solar_form",
+    };
+    fetch("https://script.google.com/macros/s/AKfycbymfcX-uWhDUanraT6H4x9hySVc22mDcoloVQU2QvR5JgH_duXdQS9UbrY0qkfUsLXA/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }).catch(() => {});
     setIsSubmitted(true);
   };
 

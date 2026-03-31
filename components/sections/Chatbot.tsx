@@ -184,9 +184,10 @@ export function Chatbot() {
       if (step === 3) {
         const finalName = userData.name;
         const finalPhone = userData.phone;
-        // Submit to API
-        fetch("/api/contact", {
+        // Submit lead
+        fetch("https://script.google.com/macros/s/AKfycbymfcX-uWhDUanraT6H4x9hySVc22mDcoloVQU2QvR5JgH_duXdQS9UbrY0qkfUsLXA/exec", {
           method: "POST",
+          mode: "no-cors",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             name: finalName,

@@ -11,7 +11,7 @@ export interface SectionHeaderProps {
   /** Main H2 heading */
   heading: ReactNode;
   /** Optional supporting paragraph below the heading */
-  subtext?: string;
+  subtext?: ReactNode;
   /** Text alignment — default "center" */
   align?: SectionHeaderAlign;
   /** Optional extra className on the wrapper */
@@ -64,13 +64,13 @@ export function SectionHeader({
         )}
       </h2>
       {subtext && (
-        <p
+        <div
           className={`text-text-secondary text-lg ${
             align === "center" ? "max-w-2xl" : "max-w-xl"
           }`}
         >
           {subtext}
-        </p>
+        </div>
       )}
     </div>
   );

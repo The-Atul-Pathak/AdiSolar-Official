@@ -343,3 +343,6 @@ Next: Phase 4 — Integrations & Functionality.
   - Internal links tested for consistency and format
   - Blog content structure validated with TypeScript interfaces
   - Next step: `npm run build` in proper deployment environment
+
+### Hotfix (March 31, 2026)
+- [x] Fixed Vercel build TypeScript error on `/about`: changed `SectionHeader` `subtext` usage to a plain string and moved the inline CTA link below the header to avoid passing JSX where `subtext` is typed as `string` in some build environments.
